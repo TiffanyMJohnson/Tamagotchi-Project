@@ -1,0 +1,41 @@
+body {
+    background-color: lightgreen;
+    background-image: url(https://cdna.artstation.com/p/assets/images/images/008/402/632/large/agustin-lanus-hagrid-render-final.jpg?1512532930);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+h1 {
+    padding-top: 100px;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 75px;
+    font-style: oblique;
+}
+h2 {
+    text-align: center;
+    color:whitesmoke;
+    font-size: 40px;
+    padding-top: 50px;
+}
+h3 {
+    color: whitesmoke;
+}
+input {
+    flex: center;
+    font-size: 30px;
+    display: inline-block;
+    
+}
+
+p {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    margin: 50px 400px 50px 400px
+}
+button {
+    font-size: 30px;
+}

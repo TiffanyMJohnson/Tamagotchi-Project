@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="hippogriff.css">
+    <title>Hippogriff</title>
+</head>
+<body>
+    
+    <h2>Please name your creature</h2>
+    
+    <form id = "form">
+        <input type="text" id="name" placeholder="Creature Name">
+        <button>Submit</button>
+
+    </form>
+    <button id ="start">Start Game</button>
+    <h1>Pet Name </h1>
+     <p id = "age">Age: </p>
+    <div class = "game">
+        <img class = "creature" src="https://wizardsunitehub.info/wp-content/uploads/2019/04/ui_registry_family03_pg01_sticker02_returned.png">
+
+        <div class = "stats">
+            <div id = "health">Health
+                <div id = "healthbar"></div>
+                <button id = "feed">Feed</button>
+            </div>
+    
+            <div id = "sleepiness">Energy
+                <div id = "tiredbar">insert tired bar here</div>
+                <button id="lights">Light Switch</button>
+            </div>
+    
+            <div id = "boredom">Activity
+                <div id = "boredombar">insert boredom bar here</div>
+                <button id = "play">Play</button>
+            </div>
+         </div>
+             
+    </div>
+    
+    <script src="pet.js"></script>
+   
+</body>
+</html>

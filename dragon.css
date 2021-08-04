@@ -1,0 +1,84 @@
+
+body {
+    background-color: black;
+    background-image: url(https://i.imgur.com/dL69sEo.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.game {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 70px;   
+    font-style: oblique; 
+    margin-top: 0px;
+}
+h2 {
+    color: whitesmoke;
+}
+h3 {color: white;
+    margin: 0px;
+}
+button {
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightgreen;
+    display: inline;
+    margin-bottom: 25px;
+    
+}
+p {
+    color: white;
+    font-size: 30px;
+    margin: 0px;
+}
+.stats {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    padding-bottom: 25px;
+    max-width: 300px;
+    max-height: 600px;
+
+}
+.creature {
+    max-width: 600px;
+    max-height: 500px;
+    margin: 300px 400px 250px 600px;
+}
+
+#age {
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 40px;
+
+}
+#healthbar {
+    margin: 25px;
+}
+#tiredbar {
+    margin: 25px;
+}
+#boredombar {
+    margin: 25px;
+}
+form {
+    max-width: 300px;
+    margin: none;
+}
+#start {
+    background-color: lightgreen;
+    font-size: 30px;
+    margin: 0px;
+    display: flex;
+    align-items: right;
+}
