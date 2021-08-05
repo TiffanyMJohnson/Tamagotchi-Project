@@ -43,6 +43,7 @@ p {
 .stats {
     color: white;
     font-size: 30px;
+    font-weight: bold;
     text-align: center;
     display: block;
     padding-bottom: 25px;
@@ -59,17 +60,24 @@ p {
 #age {
     text-align: center;
     padding-bottom: 15px;
-    font-size: 40px;
+    font-size: 30px;
+    font-weight: bold;
 
 }
 #healthbar {
     margin: 25px;
+    color: greenyellow;
+    font-weight: bold;
 }
 #tiredbar {
     margin: 25px;
+    color: greenyellow;
+    font-weight: bold;
 }
 #boredombar {
     margin: 25px;
+    color: greenyellow;
+    font-weight: bold;
 }
 form {
     max-width: 300px;
@@ -77,7 +85,7 @@ form {
 }
 #start {
     background-color: lightgreen;
-    font-size: 30px;
+    font-size: 20px;
     margin: 0px;
     display: flex;
     align-items: right;
