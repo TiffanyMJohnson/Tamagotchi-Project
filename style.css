@@ -5,12 +5,8 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-.game {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 h1 {
@@ -49,13 +45,35 @@ p {
     padding-bottom: 25px;
     max-width: 300px;
     max-height: 600px;
+    align-items: flex-end;
 
 }
-.creature {
-    max-width: 600px;
-    max-height: 500px;
-    margin: 300px 400px 250px 600px;
+
+.console {
+    display: flex;
+    
 }
+
+.creature {
+    width: 500px;
+    height: 400px;
+    margin: 500px;
+    animation: moveCreature 4s infinite;
+    animation-direction: alternate-reverse;
+}
+
+/* https://www.w3schools.com/css/css3_animations.asp */
+@keyframes moveCreature {
+    from {
+        margin-block-start: 0;
+    }
+    to {
+        margin-top: 200px;
+    }
+    to {
+        margin-bottom: 200px;
+    }
+} 
 
 #age {
     text-align: center;

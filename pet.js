@@ -14,7 +14,7 @@ const health = document.querySelector("#healthbar")
 const energy = document.querySelector("#tiredbar")
 const activity = document.querySelector("#boredombar")
 
-const light = document.querySelector("body")
+const lightbulb = document.querySelector("body")
 
 class Pet {
     constructor () {
@@ -60,8 +60,9 @@ class Pet {
         }
      };
      morphPet = () => {
-         if (age >= 5) {
-             document.querySelector(".creature").image = "url (https://i.imgur.com/UBfoCcq.png)"
+         if (this.age >= 5) {
+             const img = document.querySelector(".creature")
+             img.style.width = "1000px"
          }
      }
     }
@@ -82,7 +83,7 @@ const startGame = {
       	    this.creature.sleepyPet()
             this.creature.agePet()
             this.creature.morphPet()
-        }, 1000)
+        }, 2000)
     },
     feedPet () {
         this.creature.health++ 
@@ -93,8 +94,13 @@ const startGame = {
         activity.innerText = `${this.creature.activity}`
     },
     lightSwitch () {
+        if (this.creature.light === false) {
         this.creature.energy++
-        light.style.backgroundImage = "url (https://i.imgur.com/dL69sEo.jpg)"
+        lightbulb.style.backgroundImage = ""
+        }
+        else {
+            this.creature.sleepyPet()
+        }
     },
 }
 
