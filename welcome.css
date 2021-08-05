@@ -1,9 +1,11 @@
 body {
-    background-color: lightgreen;
+    background-color: black;
     background-image: url(https://cdna.artstation.com/p/assets/images/images/008/402/632/large/agustin-lanus-hagrid-render-final.jpg?1512532930);
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 h1 {

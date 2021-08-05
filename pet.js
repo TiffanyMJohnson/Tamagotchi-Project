@@ -6,10 +6,6 @@ buttonSubmit.addEventListener('click', (event) => {
     document.querySelector("h1").innerHTML = ` ${petName}`;
 })
 
-const feed = document.querySelector("#feed")
-const lights = document.querySelector("#lights")
-const play = document.querySelector("#play")
-
 const health = document.querySelector("#healthbar")
 const energy = document.querySelector("#tiredbar")
 const activity = document.querySelector("#boredombar")
@@ -29,10 +25,7 @@ class Pet {
        health.innerText = `${this.health}`
        if (this.health <= 5) {
            health.style.color = "red";
-       }
-       if (this.health === 0) {
-           alert (`${petName}`+ "has died from hunger");
-       }
+       } 
      };
      agePet = () => {
          this.age++
@@ -44,27 +37,27 @@ class Pet {
          energy.innerText = `${this.energy}`
          if (this.energy <= 5) {
             energy.style.color = "red";
-        }
-        if (this.energy === 0) {
-            alert (`${petName}`+ "has died from lack of sleep");
-        }
+        } 
      };
      boredPet = () => {
          this.activity--
          activity.innerText = `${this.activity}`
          if (this.activity <= 5) {
             activity.style.color = "red";
-        }
-        if (this.activity === 0) {
-            alert (`${petName}`+ "has died from boredom");
-        }
+        } 
      };
      morphPet = () => {
          if (this.age >= 5) {
              const img = document.querySelector(".creature")
              img.style.width = "1000px"
          }
-     }
+     };
+     endGame = () => {
+        if (this.health === 0 || this.energy === 0 || this.activity === 0) {
+            alert ("Your creature has died from lack of proper care.")
+            location.reload()
+        }
+    };
     }
     
 const startGame = {
@@ -83,6 +76,7 @@ const startGame = {
       	    this.creature.sleepyPet()
             this.creature.agePet()
             this.creature.morphPet()
+            this.creature.endGame()
         }, 2000)
     },
     feedPet () {
@@ -93,23 +87,33 @@ const startGame = {
         this.creature.activity++
         activity.innerText = `${this.creature.activity}`
     },
-    lightSwitch () {
-        if (this.creature.light === false) {
-        this.creature.energy++
-        lightbulb.style.backgroundImage = ""
-        }
-        else {
-            this.creature.sleepyPet()
-        }
+
+    lightOn () {
+        document.querySelector("body").style.backgroundImage = "url(https://i.imgur.com/dL69sEo.jpg)"
+        this.creature.energy--
     },
+    lightOff () {
+        document.querySelector("body").style.backgroundImage = "url (https://i.imgur.com/q7pMoyL.jpg)"
+        this.creature.energy++
+    }
 }
+
+
+const feed = document.querySelector("#feed")
+const lightsOn = document.querySelector("#lights-on")
+const lightsOff = document.querySelector("#lights-off")
+const play = document.querySelector("#play")
 
 feed.addEventListener("click", (event) => {
     startGame.feedPet()
 })
 
-lights.addEventListener("click", (event)=> {
-    startGame.lightSwitch()
+lightsOn.addEventListener("click", (event)=> {
+    startGame.lightOn()
+})
+
+lightsOff.addEventListener("click", (event)=> {
+    startGame.lightOff()
 })
 
 play.addEventListener("click", (event)=> {
@@ -119,4 +123,5 @@ play.addEventListener("click", (event)=> {
 const start = document.querySelector("#start")
 start.addEventListener("click", (event)=> {
     startGame.start()
+   
 })
