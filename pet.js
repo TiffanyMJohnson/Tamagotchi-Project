@@ -10,7 +10,8 @@ const health = document.querySelector("#healthbar")
 const energy = document.querySelector("#tiredbar")
 const activity = document.querySelector("#boredombar")
 
-const lightbulb = document.querySelector("body")
+const lightbulb = document.getElementsByTagName("body[0]")
+
 
 class Pet {
     constructor () {
@@ -49,12 +50,14 @@ class Pet {
      morphPet = () => {
          if (this.age >= 5) {
              const img = document.querySelector(".creature")
-             img.style.width = "1000px"
+             img.style.width = "600px"
+             img.style.height= "400px"
+             
          }
      };
      endGame = () => {
         if (this.health === 0 || this.energy === 0 || this.activity === 0) {
-            alert ("Your creature has died from lack of proper care.")
+            alert ("Your creature has died from lack of proper care. Click ok to start the game again.")
             location.reload()
         }
     };
@@ -64,6 +67,7 @@ const startGame = {
     creature: null,
     intervalID: null,
     time:0,
+    
 
     start () {
         const creature2 = new Pet ();
@@ -89,12 +93,14 @@ const startGame = {
     },
 
     lightOn () {
-        document.querySelector("body").style.backgroundImage = "url(https://i.imgur.com/dL69sEo.jpg)"
+        lightbulb.style.backgroundImage = "url('https://i.imgur.com/dL69sEo.jpg')";
         this.creature.energy--
     },
     lightOff () {
-        document.querySelector("body").style.backgroundImage = "url (https://i.imgur.com/q7pMoyL.jpg)"
+        console.log(lightbulb)
+     lightbulb.style.backgroundImage = "url('https://i.imgur.com/q7pMoyL.jpg')";
         this.creature.energy++
+       
     }
 }
 
