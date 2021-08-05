@@ -14,6 +14,7 @@ const health = document.querySelector("#healthbar")
 const energy = document.querySelector("#tiredbar")
 const activity = document.querySelector("#boredombar")
 
+const light = document.querySelector("body")
 
 class Pet {
     constructor () {
@@ -59,8 +60,8 @@ class Pet {
         }
      };
      morphPet = () => {
-         if (age >= 10) {
-             document.querySelector(".creature").image = ("src", "https://i.imgur.com/UBfoCcq.png")
+         if (age >= 5) {
+             document.querySelector(".creature").image = "url (https://i.imgur.com/UBfoCcq.png)"
          }
      }
     }
@@ -89,17 +90,11 @@ const startGame = {
     },
     playPet () {
         this.creature.activity++
-        activity.innertext = `${this.creature.activity}`
+        activity.innerText = `${this.creature.activity}`
     },
     lightSwitch () {
-        const light = document.querySelector("body")
-        if (this.creature.light === true) {
-            light.style.backgroundImage = "url (https://i.imgur.com/dL69sEo.jpg)"
-        }
-        else {
-            light.style.backgroundImage = "url (https://i.imgur.com/q7pMoyL.jpg)"
-        }
-        
+        this.creature.energy++
+        light.style.backgroundImage = "url (https://i.imgur.com/dL69sEo.jpg)"
     },
 }
 
@@ -108,11 +103,11 @@ feed.addEventListener("click", (event) => {
 })
 
 lights.addEventListener("click", (event)=> {
-    startGame.lightSwitch
+    startGame.lightSwitch()
 })
 
 play.addEventListener("click", (event)=> {
-    startGame.playPet
+    startGame.playPet()
 })
 
 const start = document.querySelector("#start")
