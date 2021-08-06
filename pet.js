@@ -34,11 +34,19 @@ class Pet {
          petAge.innerText = "Age:" +  `${this.age}`
      };
      sleepyPet = () => {
-         this.energy--
-         energy.innerText = `${this.energy}`
+        if (this.light === true) {
+            this.energy--
+            energy.innerText = `${this.energy}`
+        }
+        else {
+            this.energy++
+            energy.innerText = `${this.energy}`
+        }
+        
          if (this.energy <= 5) {
             energy.style.color = "red";
-        } 
+        }
+       
      };
      boredPet = () => {
          this.activity--
@@ -94,15 +102,13 @@ const startGame = {
 
     lightOn () {
         document.body.style.backgroundImage = "url('https://i.imgur.com/dL69sEo.jpg')";
-        this.creature.energy--
+        this.creature.light = true;
     },
     lightOff () {
-        const off = true
         document.body.style.backgroundImage = "url('https://i.imgur.com/q7pMoyL.jpg')";
-        if (off === true){
-        this.creature.energy++
+        this.creature.light = false;
         }
-    }
+    
 }
 
 
