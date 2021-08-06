@@ -10,7 +10,7 @@ const health = document.querySelector("#healthbar")
 const energy = document.querySelector("#tiredbar")
 const activity = document.querySelector("#boredombar")
 
-const lightbulb = document.getElementsByTagName("body[0]")
+
 
 
 class Pet {
@@ -93,14 +93,15 @@ const startGame = {
     },
 
     lightOn () {
-        lightbulb.style.backgroundImage = "url('https://i.imgur.com/dL69sEo.jpg')";
+        document.body.style.backgroundImage = "url('https://i.imgur.com/dL69sEo.jpg')";
         this.creature.energy--
     },
     lightOff () {
-        console.log(lightbulb)
-     lightbulb.style.backgroundImage = "url('https://i.imgur.com/q7pMoyL.jpg')";
+        const off = true
+        document.body.style.backgroundImage = "url('https://i.imgur.com/q7pMoyL.jpg')";
+        if (off === true){
         this.creature.energy++
-       
+        }
     }
 }
 
