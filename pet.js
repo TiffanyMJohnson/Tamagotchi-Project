@@ -65,7 +65,7 @@ class Pet {
      };
      endGame = () => {
         if (this.health === 0 || this.energy === 0 || this.activity === 0) {
-            alert ("Your creature has died from lack of proper care. Click ok to start the game again.")
+            alert ("Your creature has died from lack of proper care. Click OK to start the game again.")
             location.reload()
         }
     };
